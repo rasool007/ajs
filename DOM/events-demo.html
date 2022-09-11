@@ -1,0 +1,48 @@
+<!-- The standard DOM Events describes 3 phases of event propagation:
+
+Capturing phase – the event goes down to the element.
+Target phase – the event reached the target element.
+Bubbling phase – the event bubbles up from the element. -->
+
+<!-- <style>
+    body * {
+      margin: 10px;
+      border: 1px solid blue;
+    }
+  </style>
+  
+  <form onclick="console.log('form')">FORM
+    <div onclick="console.log('div')">DIV
+      <p onclick="console.log('p')">P</p>
+    </div>
+  </form> -->
+
+
+  <!-- 2 -->
+
+  <style>
+    body * {
+      margin: 10px;
+      border: 1px solid blue;
+    }
+  </style>
+  
+  <form>FORM
+    <div>DIV
+      <p>P</p>
+    </div>
+  </form>
+  
+  <script>
+    for(let elem of document.querySelectorAll('*')) {
+      elem.addEventListener("click", e => console.log(`Capturing: ${elem.tagName}`), true);
+      elem.addEventListener("click", e => console.log(`Bubbling: ${elem.tagName}`));
+    }
+  </script>
+
+  <!-- The code sets click handlers on every element in the document to see which ones are working.
+
+If you click on <p>, then the sequence is:
+
+HTML → BODY → FORM → DIV -> P (capturing phase, the first listener):
+P → DIV → FORM → BODY → HTML (bubbling phase, the second listener). -->
