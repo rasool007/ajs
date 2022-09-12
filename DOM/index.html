@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+
+<body id = "myBody">
+    <ul>
+        <li id="specialLi" custom="test">First item</li>
+        <li>Second item</li>
+        <li>third item</li>
+    </ul>
+
+    <table id = "myTable">
+        <tr>
+            <td> first </td>
+            <td> second</td>
+        </tr>
+        <tr>
+            <td>third</td>
+            <td>fourth</td>
+        </tr>
+    </table>
+
+    <div class="allDivs">first div tag</div>
+    <div class="allDivs">second div tag</div>
+
+    <script>
+        const myDivs = document.querySelectorAll('.allDivs');
+        // console.log(myDivs);
+        // console.log(document.getElementsByClassName('allDivs'));
+    </script>
+
+    <div class="allDivs">third div tag</div>
+
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+    <div id = "div2"></div>
+</body>
+
+<script>
+    //document
+    // console.log(document);
+    // console.log(document.head);
+    // console.log(document.body);
+
+    //children
+    // console.log(document.body.children);
+    //console.log(document.body.childNodes);
+    // for(let child of document.body.children) {
+    //     console.log(child);
+    // }
+    // console.log(document.body.firstChild);
+    // console.log(document.body.lastChild);
+    // console.log(document.body.firstElementChild);
+    // console.log(document.body.lastElementChild);
+    
+    //siblings
+    // const ulTag = document.body.children[0]; 
+    // console.log(ulTag);
+    // const firstLi = ulTag.children[0];
+    // const secondLi = ulTag.children[1];
+    // console.log(secondLi.previousElementSibling.textContent);
+    // console.log(secondLi.nextElementSibling.textContent);
+
+    //table
+    // const table = document.body.children[1];
+    // console.log(table.tBodies[0].rows[0].cells[0]);
+
+    //manipulation
+
+    // firstLi.style.backgroundColor = 'red';
+    // firstLi.style.color = 'yellow';
+    // const myLi = document.getElementById('specialLi');
+    // myLi.style.backgroundColor = 'green';
+    // console.log(myLi);
+    // console.log(myLi.style);
+    // console.log(myLi.custom);
+    // console.log(myLi.getAttribute('custom'));
+    // myLi.setAttribute('custom', 'dummy');
+    // console.log(myLi.getAttribute('custom'));
+    // console.log(myLi.getAttribute('style'));
+    //removed attribute
+    // myLi.removeAttribute('custom');
+    // myLi.setAttribute('another', 'dlahdlhja');
+    // console.log(myLi);
+    // myLi.innerText = 'jhfhkah'
+    // console.log(document.getElementById('specialLi'));
+
+
+    //creating and adding elements
+
+    const additionalDiv = document.createElement('div');
+    additionalDiv.innerHTML = "<p>Hey there! This is dynamically added</p>";
+    // additionalDiv.innerText = "<p>sfjos'hljfhs</p>"
+    document.getElementById('myBody').append(additionalDiv);
+
+    // document.getElementById('myBody').prepend(additionalDiv);
+    // document.getElementById('myBody').before(additionalDiv);
+    // document.getElementById('myBody').after(additionalDiv);
+
+    document.getElementById('myTable').before(additionalDiv);
+
+    document.getElementById('div2').innerHTML = "<b>THIS IS TO DIV2</b><ul><li>10x</li></ul>"
+
+    console.log(document.getElementsByTagName('p'));
+
+    
+</script>
+
+</html>
