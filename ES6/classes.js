@@ -55,7 +55,7 @@ console.log(sameerCar.getColor());
 
 let priyaCar = new ElectricCar();
 // console.log(priyaCar);
-// console.log(priyaCar.ignition());
+console.log(priyaCar.ignition()); // motor started
 // console.log(priyaCar.applyBrakes());
 console.log(priyaCar.getColor());
 
