@@ -20,7 +20,7 @@ let result  = addition(2, 3); //5
 console.log(result); // 
 
 
-
+let a = 100;
 function x() {
     let count = 1;
     console.log("count is ", count);

@@ -68,4 +68,40 @@ for(let i = 0; i < 5; i++) {
     }, 5000);
 }
 
+// for loop with let can be visualized as below:
+{
+    i = 0
+    setTimeout(function() {
+        console.log("The value of i here is ", i);
+    }, 5000);
+}
+
+{
+    i = 1
+    setTimeout(function() {
+        console.log("The value of i here is ", i);
+    }, 5000);
+}
+
+{
+    i = 2
+    setTimeout(function() {
+        console.log("The value of i here is ", i);
+    }, 5000);
+}
+
+{
+    i =3
+    setTimeout(function() {
+        console.log("The value of i here is ", i);
+    }, 5000);
+}
+
+{
+    i = 4
+    setTimeout(function() {
+        console.log("The value of i here is ", i);
+    }, 5000);
+}
+
 
