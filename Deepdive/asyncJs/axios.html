@@ -1,0 +1,50 @@
+<!-- //axios is library which can be used to make http calls to the server
+//API calls -->
+
+<html>
+<head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        .title {
+            margin: 20px;
+            padding: 10px;
+            border: 1px dashed green;
+        }
+      </style>
+</head>
+
+<body>
+    <div id = "myDiv">
+        <h1>Welcome to Axios example</h1>
+        <button id="btn1">Get Data</button>
+    </div>
+    <div id="myContent"></div>
+    <script>
+        function fetchAPI() {
+            console.log("fetAPI called");
+            axios.get('https://jsonplaceholder.typicode.com/todos').then((response) => {
+                console.log("data fetched");
+                // console.log(response);
+                console.log(response.data);
+                const usersInfo = response.data;
+                let preparedHtml = ``;
+                for(userInfo of usersInfo) {
+                    console.log(userInfo.title);
+                    preparedHtml+= `<div class="title">${userInfo.title}</div>`;
+                }
+                
+                let displayContent = document.createElement('div');
+                displayContent.innerHTML = preparedHtml;
+                document.getElementById('myContent').append(displayContent);
+                
+
+            }).catch(e => {
+                console.log(e);
+            })
+        
+        }
+        document.getElementById('btn1').addEventListener('click',fetchAPI );
+    </script>
+</body>
+    
+</html>
