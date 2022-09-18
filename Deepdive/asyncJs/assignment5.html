@@ -1,0 +1,40 @@
+<!-- //axios is library which can be used to make http calls to the server
+//API calls -->
+
+<html>
+<head>
+    <!-- Importing axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+    #fName {
+        margin-top: 10px;
+    } 
+    #addl-section {
+        margin-top: 10px;
+    } 
+    div {
+        margin: 5px;
+    }
+    </style>
+</head>
+
+<body onload="fetchAPI()">
+    <div>
+        <button id="getUser">Load new User</button>
+    </div>
+    <img src="" alt="">
+    <div id = "displayArea">
+        <div id="fName"></div>
+        <button id="age"> Age</button>
+        <button id="email">Email</button>
+        <button id="phone">Phone</button>
+    </div>
+    <section id = "addl-section">
+        <h3>Additional Info</h3>
+        <div id = "addlInfo"></div>
+    </section>
+
+    <script src="assignment5.js"></script>
+</body>
+    
+</html>
